@@ -3,6 +3,16 @@ entries:
   communigate:
   - apiVersion: v2
     appVersion: 8.0.4
+    created: "2024-01-24T04:09:42.215491289Z"
+    description: A Helm chart for CommuniGate Pro server on Kubernetes
+    digest: 4dc2f96a6007643d2ad0a669b00d4fc57f752a76c5a962ed6e58b56ccccadf07
+    name: communigate
+    type: application
+    urls:
+    - https://github.com/FunkyNERD/helm-charts/releases/download/communigate-0.0.3/communigate-0.0.3.tgz
+    version: 0.0.3
+  - apiVersion: v2
+    appVersion: 8.0.4
     created: "2024-01-24T03:57:41.847934837Z"
     description: A Helm chart for CommuniGate Pro server on Kubernetes
     digest: ade5f25678321c79da851faa4546a468d7311a599950012a2e8078d1fd95492a
@@ -21,4 +31,4 @@ entries:
     urls:
     - https://github.com/FunkyNERD/helm-charts/releases/download/communigate-0.0.1/communigate-0.0.1.tgz
     version: 0.0.1
-generated: "2024-01-24T03:57:41.847951648Z"
+generated: "2024-01-24T04:09:42.215504866Z"
