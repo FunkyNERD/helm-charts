@@ -44,7 +44,7 @@ The following table lists the configurable parameters of the CommuniGate chart a
 Parameter | Description | Default
 --- | --- | ---
 `extraContainers` | Additional containers to be added to the application pod | `[]`
-`image.repository` | Docker image repository | `mailhog/mailhog`
+`image.repository` | Docker image repository | `jamiecarl/communigate`
 `image.tag` | Docker image tag whose default is the chart version | `""`
 `image.pullPolicy` | Docker image pull policy | `IfNotPresent`
 `communigate.replicaCount` | Specifies the number of replica pods to deploy | `true` |
@@ -69,5 +69,5 @@ Parameter | Description | Default
 `ingress.ingressClassName` | If set the created Ingress resource will have this class name. kubernetes.io/ingress.class is [deprecated](https://kubernetes.io/docs/concepts/services-networking/ingress/#deprecated-annotation) | `nil`
 `ingress.annotations` | Annotations for the ingress | `{}`
 `ingress.labels` | Labels for the ingress | `{}`
-`ingress.hosts` | A list of ingress hosts | `{ host: mailhog.example.com, paths: [{ path: "/", pathType: Prefix }] }`
+`ingress.hosts` | A list of ingress hosts | `{ host: mail.example.com, paths: [{ path: "/", pathType: Prefix }] }`
 `ingress.tls` | A list of [IngressTLS](https://v1-8.docs.kubernetes.io/docs/api-reference/v1.8/#ingresstls-v1beta1-extensions) items | `[]`
