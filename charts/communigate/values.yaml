@@ -11,8 +11,6 @@ image:
   tag: latest
 
 imagePullSecrets: []
-nameOverride: ""
-fullnameOverride: ""
 
 communigate:
   replicaCount: 1
@@ -38,6 +36,12 @@ securityContext: {}
   # readOnlyRootFilesystem: true
   # runAsNonRoot: true
   # runAsUser: 1000
+
+persistence:
+  enabled: true
+  storageClass: ""
+  accessMode: ReadWriteOnce
+  size: 8Gi
 
 service:
   type: ClusterIP

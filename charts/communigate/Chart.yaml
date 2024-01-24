@@ -1,6 +1,18 @@
 apiVersion: v2
 name: communigate
 description: A Helm chart for CommuniGate Pro server on Kubernetes
+maintainers:
+  - name: Jamie Carl
+    email: jamie@hazaar.io
+    url: https://hazaar.io
+home: https://communigate.world
+icon: https://pbs.twimg.com/profile_images/1042431319840567297/NwLch19k_400x400.jpg
+keywords:
+  - communigate
+  - email
+  - server
+  - unified communications
+  - groupware
 
 # A chart can be either an 'application' or a 'library' chart.
 #
@@ -15,7 +27,7 @@ type: application
 # This is the chart version. This version number should be incremented each time you make changes
 # to the chart and its templates, including the app version.
 # Versions are expected to follow Semantic Versioning (https://semver.org/)
-version: 0.0.3
+version: 0.1.0
 
 # This is the version number of the application being deployed. This version number should be
 # incremented each time you make changes to the application. Versions are not expected to
