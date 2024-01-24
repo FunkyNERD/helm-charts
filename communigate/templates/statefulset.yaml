@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: {{ .Release.Name }}
+  labels:
+    app: communigate
+spec:
+  replicas: {{ .Values.communigate.replicaCount }}
+  selector:
+    matchLabels:
+      app: communigate
+  template:
+    metadata:
+      labels:
+        app: communigate
+    spec:
+      containers:
+        - name: communigate
+          image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+          volumeMounts:
+          - name: storage
+            mountPath: "/var/CommuniGate"
+          ports:
+            - containerPort: 9010
+              protocol: TCP
+            - containerPort: 443
+              protocol: TCP
+            - containerPort: 80
+              protocol: TCP
+      restartPolicy: Always
+      dnsPolicy: ClusterFirst
+  volumeClaimTemplates:
+    - metadata:
+        name: storage
+      spec:
+        accessModes:
+          - ReadWriteMany
+        storageClassName: slow
+        resources:
+          requests:
+            storage: 16Gi
+
+
+
