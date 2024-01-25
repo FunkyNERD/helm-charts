@@ -8,24 +8,30 @@ spec:
   replicas: {{ .Values.communigate.replicaCount }}
   selector:
     matchLabels:
-      app: communigate
+      app.kubernetes.io/component: {{ .Release.Name }}
+      app.kubernetes.io/instance: {{ .Release.Name }}
+      app.kubernetes.io/managed-by: Helm
+      app.kubernetes.io/name: communigate
+      app.kubernetes.io/version: {{ .Chart.AppVersion }}
   template:
     metadata:
       labels:
-        app: communigate
+        app.kubernetes.io/component: {{ .Release.Name }}
+        app.kubernetes.io/instance: {{ .Release.Name }}
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/name: communigate
+        app.kubernetes.io/version: {{ .Chart.AppVersion }}
     spec:
       containers:
         - name: communigate
-          image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+          image: {{ .Values.image.repository }}:{{ .Chart.AppVersion | default .Values.image.tag }}
           {{ if .Values.persistence.enabled }}
           volumeMounts:
           - name: storage
             mountPath: "/var/CommuniGate"
           {{ end }}
           ports:
-            - containerPort: 9010
-              protocol: TCP
-            - containerPort: 443
+            - containerPort: 8010
               protocol: TCP
             - containerPort: 80
               protocol: TCP

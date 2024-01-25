@@ -50,3 +50,6 @@ Parameter | Description | Default
 `persistence.storageClass` | Storage class of backing PVC | `""` (uses alpha storage class annotation) |
 `persistence.accessMode` | Use volume as ReadOnly or ReadWrite | `ReadWriteOnce` |
 `persistence.size` | Size of data volume | `8Gi` |
+`ingress.enabled` | Enables Ingress | `false` |
+`ingress.hosts` | Ingress accepted hostnames | `[]` |
+`ingress.annotations` | Ingress annotations | `[]` |
