@@ -3,6 +3,28 @@ entries:
   communigate:
   - apiVersion: v2
     appVersion: 8.0.4
+    created: "2024-01-25T07:28:29.940812624Z"
+    description: A Helm chart for CommuniGate Pro server on Kubernetes
+    digest: 28f930176800750fc181c1c6eb41a5fafef937b9513320e0d7038d63ae1d050b
+    home: https://communigate.world
+    icon: https://pbs.twimg.com/profile_images/1042431319840567297/NwLch19k_400x400.jpg
+    keywords:
+    - communigate
+    - email
+    - server
+    - unified communications
+    - groupware
+    maintainers:
+    - email: jamie@hazaar.io
+      name: Jamie Carl
+      url: https://hazaar.io
+    name: communigate
+    type: application
+    urls:
+    - https://github.com/FunkyNERD/helm-charts/releases/download/communigate-0.1.1/communigate-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: 8.0.4
     created: "2024-01-24T12:28:11.83844522Z"
     description: A Helm chart for CommuniGate Pro server on Kubernetes
     digest: 9c6f8a711940c5226c365bde2c736f7b44b714db994a6c5c6c9d3b88447cb227
@@ -53,4 +75,4 @@ entries:
     urls:
     - https://github.com/FunkyNERD/helm-charts/releases/download/communigate-0.0.1/communigate-0.0.1.tgz
     version: 0.0.1
-generated: "2024-01-24T12:28:11.838496286Z"
+generated: "2024-01-25T07:28:29.940833684Z"
