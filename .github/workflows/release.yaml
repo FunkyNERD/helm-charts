@@ -6,6 +6,16 @@ on:
       - main
 
 jobs:
+  linter-charts:
+    runs-on: ubuntu-20.04
+    container:
+      image: artifacthub/ah
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@master
+      - name: Run ah lint
+        working-directory: ./charts
+        run: ah lint *
   release:
     runs-on: ubuntu-latest
     steps:
