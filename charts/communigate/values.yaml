@@ -14,7 +14,7 @@ imagePullSecrets: []
 
 communigate:
   replicaCount: 1
-  
+
 serviceAccount:
   # Specifies whether a service account should be created
   create: true
@@ -26,10 +26,12 @@ serviceAccount:
 
 podAnnotations: {}
 
-podSecurityContext: {}
+podSecurityContext:
+  {}
   # fsGroup: 2000
 
-securityContext: {}
+securityContext:
+  {}
   # capabilities:
   #   drop:
   #   - ALL
@@ -44,19 +46,35 @@ persistence:
   size: 8Gi
 
 service:
-  type: ClusterIP
-  port: 80
+  admin:
+    enabled: true
+  web:
+    enabled: true
+  imap:
+    enabled: true
+  smtp:
+    enabled: true
 
 ingress:
-  enabled: false
-  className: ""
-  annotations: {}
-    # kubernetes.io/ingress.class: nginx
-    # kubernetes.io/tls-acme: "true"
-  host: mail.example.com
-  pathType: Prefix
+  admin:
+    enabled: true
+    className: ""
+    annotations:
+      nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+    host: cg.hazaar.io
+    pathType: Prefix
+    path: /
+  web:
+    enabled: true
+    className: ""
+    annotations:
+      nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+    host: mail.hazaar.io
+    pathType: Prefix
+    path: /
 
-resources: {}
+resources:
+  {}
   # We usually recommend not to specify default resources and to leave this as a conscious
   # choice for the user. This also increases chances charts run on environments with little
   # resources, such as Minikube. If you do want to specify resources, uncomment the following

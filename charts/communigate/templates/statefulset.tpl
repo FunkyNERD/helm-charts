@@ -31,7 +31,7 @@ spec:
             mountPath: "/var/CommuniGate"
           {{ end }}
           ports:
-            - containerPort: 8010
+            - containerPort: 9010
               protocol: TCP
             - containerPort: 80
               protocol: TCP
